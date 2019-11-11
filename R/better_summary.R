@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' data("iris")
-#' better_describe(iris)
+#' better_summary(iris)
 better_summary <- function(df) {
   df %>%
     dplyr::select_if(is.numeric) %>%
