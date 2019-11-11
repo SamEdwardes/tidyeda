@@ -1,0 +1,45 @@
+---
+title: "Getting Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting_started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Base R provides many useful tools for exploratory data analysis (EDA). However these tools do not always fit into the Tidyverse workflow.
+
+```{r setup}
+options(tidyverse.quiet = TRUE)
+library(tidyeda)
+library(tidyverse)
+```
+
+When using base R, the output of summary is a table object
+
+```{r load data}
+library(tidyeda)
+data("iris")
+iris <- dplyr::as_tibble(iris)
+iris_base_summary <- summary(iris)
+print(iris_base_summary)
+class(iris_base_summary)
+```
+
+Using `better_summary`, the output is the familiar `tibble` so commonly seen in the tidyverse.
+
+```{r example}
+library(tidyeda)
+iris_better_summary <- iris %>%
+  better_summary()
+
+print(iris_better_summary)
+print(class(iris_better_summary))
+```

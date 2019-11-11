@@ -13,11 +13,12 @@ better_summary(df)
 A data frame
 }
 \description{
-An improved version of the 'summary' from base R.
+An improved version of \code{summary} from base R.
 }
 \details{
-Base R 'summary' returns a table object that is not friendly for analysis.
-'better_summary' looks to improve on this by following Tidyverse principles.
+Base R \code{summary} returns a table object that is not friendly for
+analysis. \code{better_summary} looks to improve on this by following
+Tidyverse principles.
 }
 \examples{
 data("iris")
